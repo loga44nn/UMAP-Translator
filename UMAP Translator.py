@@ -1,11 +1,12 @@
 # accessible for everyone #
+# this is python, meaning you also need pip and biopython #
 # you dont know the pain i went through trouble shooting... #
 
 import re
 import csv
 from Bio import Entrez
 
-# !!! MUST HAVE EMAIL WITH NCBI !!! #
+# !!! IF YOU WANT TAX IDS YOU MUST HAVE EMAIL WITH NCBI !!! #
 Entrez.email = 'youremail@gmail.com'
 
 # Questions #
@@ -17,7 +18,7 @@ print("Enter 1, 2, or 3 below ↓↓↓")
 choice = input().strip()
 
 # UMAP String #
-print("Please paste the string in newick format below ↓↓↓; then press enter")
+print("Paste the string in newick format below ↓↓↓, then press enter")
 tree_str = input()
 
 # If it works it works, somehow. ↓↓↓ #
@@ -57,12 +58,12 @@ with open(output_file, "w", newline="") as csvfile:
             writer.writerow([tax_id])
 
     elif choice == "3":
-        print(f"\n{'Scientific Name':40} | {'Tax ID'}")
-        print("-" * 60)
+        print(f"\n{'Scientific Name':60} | {'Tax ID'}")
+        print("-" * 80)
         writer.writerow(["Scientific Name", "Tax ID"])
         for species in unique_species:
             tax_id = get_tax_id(species)
-            print(f"{species:40} | {tax_id}")
+            print(f"{species:60} | {tax_id}")
             writer.writerow([species, tax_id])
     else:
         print("Invalid input. Please enter 1, 2, or 3.")
