@@ -17,7 +17,7 @@ print("Enter 1, 2, or 3 below ↓↓↓")
 choice = input().strip()
 
 # UMAP String #
-print("Please paste the string below ↓↓↓; then press enter")
+print("Please paste the string in newick format below ↓↓↓; then press enter")
 tree_str = input()
 
 # If it works it works, somehow. ↓↓↓ #
