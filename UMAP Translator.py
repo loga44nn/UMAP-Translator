@@ -6,7 +6,7 @@ import csv
 from Bio import Entrez
 
 # !!! MUST HAVE EMAIL WITH NCBI !!! #
-Entrez.email = 'lgntaylor8@gmail.com'
+Entrez.email = 'youremail@gmail.com'
 
 # Questions #
 print("What do you want to extract?")
