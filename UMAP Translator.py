@@ -7,7 +7,7 @@ import csv
 from Bio import Entrez
 
 # !!! IF YOU WANT TAX IDS YOU MUST HAVE EMAIL WITH NCBI !!! #
-Entrez.email = 'lgntaylor8@gmail.com'
+Entrez.email = '@gmail.com'
 
 # Questions #
 choice = input('Extract (1: names, 2: IDs, 3: both)?\n')
