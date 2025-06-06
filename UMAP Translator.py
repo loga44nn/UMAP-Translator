@@ -7,18 +7,17 @@ import csv
 from Bio import Entrez
 
 # !!! IF YOU WANT TAX IDS YOU MUST HAVE EMAIL WITH NCBI !!! #
-Entrez.email = 'youremail@gmail.com'
+Entrez.email = 'lgntaylor8@gmail.com'
 
 # Questions #
-print("What do you want to extract?")
-print("1 = Scientific names only")
-print("2 = Tax IDs only")
-print("3 = Both scientific names and Tax IDs")
-print("Enter 1, 2, or 3 below ↓↓↓")
-choice = input().strip()
+choice = input('Extract (1: names, 2: IDs, 3: both)?\n')
+
+if choice not in {"1", "2", "3"}:
+    print("Invalid input. Please enter 1, 2, or 3.")
+    exit()
 
 # UMAP String #
-print("Paste the string in newick format below ↓↓↓, then press enter")
+print("Paste the newick format string below ↓↓↓, then press enter")
 tree_str = input()
 
 # If it works it works, somehow. ↓↓↓ #
@@ -66,4 +65,4 @@ with open(output_file, "w", newline="") as csvfile:
             print(f"{species:60} | {tax_id}")
             writer.writerow([species, tax_id])
     else:
-        print("Invalid input. Please enter 1, 2, or 3.")
+        exit()
